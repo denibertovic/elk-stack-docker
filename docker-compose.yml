@@ -1,0 +1,30 @@
+elasticsearch:
+    image: denibertovic/elasticsearch
+    volumes:
+        - ./logs/elasticsearch:/opt/elasticsearch/logs
+        - ./config-examples/elasticsearch:/opt/elasticsearch/config
+        - ./data/elasticsearch:/opt/elasticsearch/data
+
+logstash:
+    image: denibertovic/logstash
+    links:
+        - elasticsearch
+    volumes:
+        - ./config-examples/logstash:/opt/conf
+        - ./certs:/opt/certs
+        - ./logs/logstash:/opt/logs
+    ports:
+        - "514:514"
+        - "5043:5043"
+        - "9292:9292"
+
+kibana:
+    image: denibertovic/kibana
+    links:
+        - elasticsearch
+    volumes:
+        - ./logs/kibana:/logs
+        - ./config-examples/kibana:/kibana/config
+    ports:
+        - "5601:5601"
+
