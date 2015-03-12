@@ -4,8 +4,9 @@
 
 1. Install docker-compose: https://github.com/docker/compose/releases
 2. Clone this repository and cd elk-stack-docker
-3. Run docker-compose up
-4. Visit http://localhost:5601 to access the Kibana interface
+3. Make logstash (logstash-forwarder) certifaces: make certs
+4. Run docker-compose up
+5. Visit http://localhost:5601 to access the Kibana interface
 
 
 ### Exposed ports
