@@ -1,4 +1,4 @@
-/logs/elasticsearch/*.log
+/logs/elasticsearch/*.log*
 /logs/logstash/*.log
 /logs/kibana/*.log
 /certs

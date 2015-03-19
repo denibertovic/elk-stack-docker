@@ -14,4 +14,5 @@
     514  - Logstash: syslog
     5043 - Logstash: logstash forwarder
     9292 - Logstash: Logstash UI
+    5601 - Kibana
 
