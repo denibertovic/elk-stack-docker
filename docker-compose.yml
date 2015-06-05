@@ -4,6 +4,10 @@ elasticsearch:
         - ./logs/elasticsearch:/opt/elasticsearch/logs
         - ./config-examples/elasticsearch:/opt/elasticsearch/config
         - ./data/elasticsearch:/opt/elasticsearch/data
+    ports:
+        - "9200:9200"
+        - "9300:9300"
+    restart: always
 
 logstash:
     image: denibertovic/logstash
@@ -17,6 +21,7 @@ logstash:
         - "514:514"
         - "5043:5043"
         - "9292:9292"
+    restart: always
 
 kibana:
     image: denibertovic/kibana
@@ -27,4 +32,5 @@ kibana:
         - ./config-examples/kibana:/kibana/config
     ports:
         - "5601:5601"
+    restart: always
 
